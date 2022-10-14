@@ -11,6 +11,14 @@ type User struct {
 	Password string
 }
 
+type Session struct {
+	ID           string `gorm:"primarykey"`
+	UserID       uint
+	User         User
+	UserAgent    string
+	LastAccessed time.Time
+}
+
 type Memo struct {
 	gorm.Model
 	UserID  uint
