@@ -21,6 +21,8 @@ steps:
       password:
         from_secret: DOCKER_REGISTRY_PASSWD
       repo: r.s8k.top/memo
+    depends_on:
+      - submodules
   - name: deploy
     image: plugins/webhook
     settings:
