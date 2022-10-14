@@ -21,7 +21,9 @@ func Start(addr string) error {
 	}
 
 	g := gin.Default()
-	userEndpoints(g.Group("/api/"))
+	api := g.Group("/api/")
+	userEndpoints(api)
+	memoEndpoints(api)
 
 	return g.Run(addr)
 }
