@@ -1,5 +1,5 @@
 FROM golang:1.18-alpine AS build
-RUN apk add --no-cache gcc upx
+RUN apk add --no-cache gcc g++ upx
 COPY ./ /app/
 WORKDIR /app/
 ENV GOPROXY=https://goproxy.cn,direct
