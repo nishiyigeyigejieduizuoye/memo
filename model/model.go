@@ -65,6 +65,7 @@ func (m *Memo) Detail() MemoDetail {
 func AutoMigrate(db *gorm.DB) error {
 	return db.AutoMigrate(
 		&User{},
+		&Session{},
 		&Memo{},
 	)
 }
