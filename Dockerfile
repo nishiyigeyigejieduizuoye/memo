@@ -11,4 +11,4 @@ VOLUME /app/data
 COPY --from=build /app/main /app/
 ENV GIN_MODE=release
 ENTRYPOINT /app/main
-EXPOSE 4000/tcp
+EXPOSE 80/tcp
