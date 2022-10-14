@@ -1,6 +1,7 @@
 package services
 
 import (
+	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 	"memo/model"
@@ -24,6 +25,10 @@ func Start(addr string) error {
 	api := g.Group("/api/")
 	userEndpoints(api)
 	memoEndpoints(api)
+
+	g.NoRoute(
+		static.Serve("/", static.LocalFile("frontend", false)),
+	)
 
 	return g.Run(addr)
 }
