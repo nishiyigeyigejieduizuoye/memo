@@ -1,4 +1,4 @@
 [submodule "frontend"]
 	path = frontend
-	url = git@git.s8k.top:laclic/memo-frontend.git
+	url = https://git.s8k.top/laclic/memo-frontend.git
 	branch = master
