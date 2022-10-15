@@ -60,7 +60,7 @@ func listMemo(ctx *gin.Context) {
 	user := ctx.MustGet("user").(model.User)
 
 	var memos []model.Memo
-	db.Where("user_id=?", user.ID).Order("created_at DESC").First(&memos)
+	db.Where("user_id=?", user.ID).Order("created_at DESC").Find(&memos)
 
 	res := make([]model.MemoInfo, 0, len(memos))
 	for _, v := range memos {
